@@ -7,6 +7,10 @@ body {
   padding: 0;
   font-family: "Roboto", sans-serif;
 }
+
+body::-webkit-scrollbar {
+  /* display: none; */
+}
 ul {
   margin: 0;
   padding: 0;
@@ -130,6 +134,269 @@ a {
   text-align: center;
 }
 
+.slider1 {
+  width: 100%;
+  position: relative;
+  margin-top: 20px;
+}
 .slider1__list {
+  width: 100%;
   display: flex;
+  list-style: none;
+  transition: transform 0.2s linear;
+}
+
+.slider1__list li {
+  min-width: 33%;
+  margin-right: 15px;
+}
+.slider1__list li img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  filter: brightness(0.4);
+}
+.slider1__left,
+.slider1__right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 30%;
+  font-size: 25px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.slider1__right {
+  left: unset;
+  right: 30%;
+}
+
+.slider1__page {
+  position: absolute;
+  bottom: 10px;
+  left: 62%;
+  color: white;
+  border: 1px solid black;
+  padding: 3px 15px;
+  border-radius: 15px;
+  font-size: 12px;
+  background-color: rgba(15, 15, 15, 0.6);
+}
+
+.event__ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.event__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 13px;
+}
+.event__item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+.event__item #first {
+  background-color: #e8cb99;
+}
+.event__item #second {
+  background-color: #99d1cb;
+}
+
+.event__item #third {
+  background-color: #b9bef1;
+}
+.event__item #forth {
+  background-color: #efb9b9;
+}
+
+.slider2 {
+  border: 1px solid black;
+  height: 60vh;
+  background-color: #17202e;
+  position: relative;
+}
+
+.slider2 h1 {
+  width: 30%;
+  color: white;
+  text-align: end;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.slider2__ul {
+  display: flex;
+  width: 74%;
+  margin: auto;
+  overflow: hidden;
+  list-style: none;
+  /* scroll-behavior: smooth; */
+}
+.slider2__ul li {
+  margin-right: 20px;
+}
+.slider2__item img {
+  width: 140px;
+  height: 200px;
+}
+
+.slider2 .controller,
+.slider3 .controller {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 5%;
+  font-size: 25px;
+  background-color: #2b3444;
+  color: white;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.slider2 .slider2__right,
+.slider3 .slider3__right {
+  left: unset;
+  right: 5%;
+}
+.nowReading {
+  padding: 0 13%;
+  margin-top: 20px;
+}
+.nowReading__time {
+  background: linear-gradient(to left, #3494e6, #ec6ead);
+  width: 120px;
+  color: white;
+  padding: 5px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+.nowReading__time span {
+  font-size: 13px;
+  margin-left: 10px;
+}
+.nowReading h1 {
+  font-size: 20px;
+  font-weight: 300;
+}
+.nowReading__ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+
+  margin: auto;
+  gap: 15px;
+}
+
+.nowReading__li {
+  display: flex;
+}
+
+.nowReading__li img {
+  width: 50px;
+  height: 80px;
+  margin-right: 20px;
+}
+.nowReading__li .itemWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.itemWrapper {
+  color: #b2bec3;
+}
+.itemWrapper h2 {
+  font-size: 18px;
+  margin-right: 20px;
+  color: black;
+}
+
+.itemWrapper .item-title div {
+  font-size: 15px;
+  font-weight: 700;
+  color: black;
+}
+
+.slider3 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  position: relative;
+}
+.slider3 h1 {
+  padding: 0 13%;
+}
+.slider3__ul {
+  display: flex;
+  width: 74%;
+  margin: auto;
+  overflow: hidden;
+  list-style: none;
+}
+
+.slider3__li {
+  margin-right: 20px;
+}
+.slider3__li img {
+  width: 140px;
+  height: 200px;
+}
+
+.footer {
+  height: 50vh;
+  background-color: var(--footer-black);
+}
+
+.footer__menu {
+  display: flex;
+  color: white;
+  width: 75%;
+  margin: auto;
+  padding-top: 20px;
+}
+.footer__title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-right: 60px;
+}
+
+.footer__detail {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 20px;
+  font-size: 15px;
+  list-style: none;
+}
+
+.footer__info {
+  width: 75%;
+  margin: auto;
+  color: #b2bec3;
+}
+.footer__info-company {
+  margin-bottom: 10px;
 }
