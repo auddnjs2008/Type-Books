@@ -1,0 +1,105 @@
+main {
+  padding: 10px 12%;
+}
+
+.bookList {
+}
+.bookItem {
+  border-bottom: 1px solid rgba(15, 15, 15, 0.3);
+  padding: 10px;
+  display: flex;
+  margin-bottom: 30px;
+
+  align-items: center;
+}
+.bookItem img {
+  margin-right: 20px;
+  width: 100px;
+  height: 150px;
+}
+.bookItem img:hover {
+  opacity: 0.8;
+}
+
+.bookItem h3 {
+  font-size: 15px;
+}
+.bookItem span,
+.bookItem p {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.bookItem .price {
+  color: red;
+  margin-right: 10px;
+}
+
+.bookItem .buylink {
+  color: red;
+  text-decoration: underline;
+}
+
+.bookItem .storeCart {
+  font-size: 26px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.bookItem .storeCart:hover {
+  opacity: 0.6;
+}
+
+@keyframes alarmMove {
+  0% {
+    transform: translate(-50%, -100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, 100%);
+    opaicty: 1;
+  }
+}
+
+@keyframes alarmInit {
+  0% {
+    transform: translate(-50%, 100%);
+    opaicty: 1;
+  }
+  100% {
+    transform: translate(-50%, -100%);
+    opacity: 0;
+  }
+}
+
+.alarm {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  background-color: black;
+  border: 1px solid black;
+  width: 400px;
+  height: 50px;
+  transition: transform 0.1s linear;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.alarm h3 {
+  color: greenyellow;
+  font-size: 15px;
+  margin-right: 10px;
+}
+.alarm a {
+  display: none;
+  color: white;
+  font-size: 13px;
+  transition: transform 0.1s ease-in-out;
+}
+.alarm a:hover {
+  transform: translateX(4px);
+}

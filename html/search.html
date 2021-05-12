@@ -5,9 +5,89 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="module" src="../dist/app.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/0f0e16d051.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../style/searchPage.css" />
+    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+
     <title>Document</title>
   </head>
   <body>
-    <h1>여기에 책을 찾았습니다.</h1>
+    <div class="searchBox">
+      <header class="header">
+        <ul class="header__title">
+          <li class="header__name">MIDIBOOKS | MIDISelect</li>
+          <form class="header__form">
+            <span><i class="fas fa-search"></i></span>
+            <input type="text" placeholder="제목,저자,출판사 검색" />
+          </form>
+          <li class="header__buttons">
+            <button class="header__cash">캐시충전</button>
+            <button class="header__mybook">내 서재</button>
+          </li>
+        </ul>
+        <ul class="header__ul">
+          <li>
+            <a class="ul__link" href="/"
+              ><i class="fas fa-home"></i><span>홈</span></a
+            >
+          </li>
+          <li>
+            <a class="ul__link"><i class="fas fa-bell"></i><span>알림</span></a>
+          </li>
+          <li>
+            <a class="ul__link"
+              ><i class="fas fa-shopping-cart"></i><span>카트</span></a
+            >
+          </li>
+          <li>
+            <a class="ul__link"
+              ><i class="fas fa-user-alt"></i><span>마이리디</span></a
+            >
+          </li>
+        </ul>
+      </header>
+      <main>
+        <ul class="bookList"></ul>
+      </main>
+      <footer class="footer">
+        <div class="footer__menu">
+          <ul class="footer__title">
+            <span>고객센터</span>
+            |
+            <span>공지사항</span>
+          </ul>
+          <ul class="footer__detail">
+            <li class="footer__detail-item">RIDIPAPER</li>
+            <li class="footer__detail-item">제휴카드</li>
+            <li class="footer__detail-item">뷰어 다운로드</li>
+            <li class="footer__detail-item">리디캐시 충전</li>
+            <li class="footer__detail-item">콘텐츠 제공 문의</li>
+            <li class="footer__detail-item">CP 사이트</li>
+            <li class="footer__detail-item">사업 제휴 문의</li>
+            <li class="footer__detail-item">페이퍼 대량구매 안내</li>
+            <li class="footer__detail-item">페이스북</li>
+            <li class="footer__detail-item">인스타그램</li>
+            <li class="footer__detail-item">회사소개</li>
+            <li class="footer__detail-item">인재 채용</li>
+          </ul>
+        </div>
+        <div class="footer__info">
+          <div class="footer__info-company">리디(주) 사업자 정보</div>
+          <div class="footer__info-mark">© RIDI Corp.</div>
+        </div>
+      </footer>
+    </div>
+    <div class="alarm">
+      <h3 class="content"></h3>
+      <a href="">카트보기📚</a>
+    </div>
   </body>
 </html>
