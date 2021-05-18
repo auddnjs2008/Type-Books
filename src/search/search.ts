@@ -8,8 +8,9 @@ export class SearchComponent {
   private key: string = "AIzaSyD1gStoBN-K1cSgox7UoJ_NUPegMU4eX6M";
   private searchResult = {};
   private SearchForm: Node | null = document.querySelector(".header__form");
-  private SearchInput: HTMLInputElement | null = (this
-    .SearchForm as HTMLElement).querySelector("input");
+  private SearchInput: HTMLInputElement | null = (
+    this.SearchForm as HTMLElement
+  ).querySelector("input");
   constructor() {
     this.SearchForm?.addEventListener("submit", this.onSubmit);
   }
@@ -32,6 +33,5 @@ export class SearchComponent {
     }
     this.SearchInput!.value = "";
     window.location.href = "/html/search.html";
-    setTimeout(() => console.log("야호"), 5000);
   };
 }

@@ -1,3 +1,4 @@
+import { CartPageComponent } from "./cart/cartpage.js";
 import { afterSearchComponent } from "./search/afterSearch.js";
 import { SearchComponent } from "./search/search.js";
 import { CommonSlider } from "./slider/commonslider.js";
@@ -12,6 +13,8 @@ class App {
     const Search = new SearchComponent();
     if (window.location.href.includes("search")) {
       const SearchDraw = new afterSearchComponent();
+    } else if (window.location.href.includes("cart")) {
+      const CartDraw = new CartPageComponent();
     } else {
       const mainSlider = new MainSlider();
       const commonSlider = new CommonSlider(

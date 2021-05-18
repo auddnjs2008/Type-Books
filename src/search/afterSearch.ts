@@ -1,9 +1,9 @@
-type dataItem = {
+export type dataItem = {
   saleInfo: object;
   volumeInfo: object;
 };
 
-type itemInfo = {
+export type itemInfo = {
   volumeInfo: {
     authors: Array<string>;
     title: string;
@@ -31,20 +31,21 @@ export class afterSearchComponent {
   );
   private bookListUl: HTMLUListElement = document.querySelector(".bookList")!;
   private alarmBox: HTMLDivElement = document.querySelector(".alarm")!;
-  private alarmBoxContent: HTMLHeadingElement = this.alarmBox.querySelector(
-    "h3"
-  )!;
+  private alarmBoxContent: HTMLHeadingElement =
+    this.alarmBox.querySelector("h3")!;
   private cartLink: HTMLAnchorElement = this.alarmBox.querySelector("a")!;
-  private timeOut: number;
+  private timeOut: number | undefined = undefined;
   constructor() {
     this.drawAllItem();
     this.bookListUl?.addEventListener("click", (e) => this.onCartClick(e));
   }
 
   drawAllItem = () => {
-    this.searchData.forEach((item: itemInfo, index: number) =>
-      this.drawOneItem(item, index)
-    );
+    if (this.searchData) {
+      this.searchData.forEach((item: itemInfo, index: number) =>
+        this.drawOneItem(item, index)
+      );
+    }
   };
 
   drawOneItem = (item: itemInfo, index: number) => {
@@ -71,7 +72,10 @@ export class afterSearchComponent {
     div.appendChild(p);
 
     if (item.saleInfo.saleability !== "NOT_FOR_SALE") {
-      priceSpan.textContent = `${item.saleInfo.listPrice.amount}(${item.saleInfo.listPrice.currencyCode})`;
+      priceSpan.textContent =
+        item.saleInfo.saleability !== "FREE"
+          ? `${item.saleInfo.listPrice.amount}(${item.saleInfo.listPrice.currencyCode})`
+          : "0(KRW)";
       const buyLink = document.createElement("a");
       const storeCart = document.createElement("span");
       buyLink.href = item.saleInfo.buyLink;
@@ -128,10 +132,22 @@ export class afterSearchComponent {
 
   moveAlarmBox = () => {
     clearTimeout(this.timeOut);
-    this.alarmBox.style.animation = "";
-    this.alarmBox.style.animation = "alarmMove 0.15s linear forwards";
+
+    if (
+      !this.alarmBox.classList.contains("out") &&
+      this.timeOut !== undefined
+    ) {
+      this.alarmBox.style.animation = "alarmInit 0.05s linear forwards";
+    }
+
+    setTimeout(() => {
+      this.alarmBox.style.animation = "alarmMove 0.15s linear forwards";
+      this.alarmBox.classList.remove("out");
+    }, 50);
+
     this.timeOut = setTimeout(() => {
       this.alarmBox.style.animation = "alarmInit 0.15s linear forwards";
+      this.alarmBox.classList.add("out");
     }, 3000);
   };
 }

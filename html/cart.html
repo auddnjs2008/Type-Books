@@ -9,7 +9,7 @@
       src="https://kit.fontawesome.com/0f0e16d051.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="../style/searchPage.css" />
+    <link rel="stylesheet" href="../style/cartPage.css" />
     <link rel="stylesheet" href="../style/style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -17,10 +17,10 @@
       rel="stylesheet"
     />
 
-    <title>Document</title>
+    <title>Cart</title>
   </head>
   <body>
-    <div class="searchBox">
+    <div class="cartBox">
       <header class="header">
         <ul class="header__title">
           <li class="header__name">MIDIBOOKS | MIDISelect</li>
@@ -43,7 +43,7 @@
             <a class="ul__link"><i class="fas fa-bell"></i><span>알림</span></a>
           </li>
           <li>
-            <a class="ul__link" href="cart.html" ;
+            <a class="ul__link" href="cart.html"
               ><i class="fas fa-shopping-cart"></i><span>카트</span></a
             >
           </li>
@@ -55,7 +55,40 @@
         </ul>
       </header>
       <main>
-        <ul class="bookList"></ul>
+        <div class="cartInfoWrapper">
+          <h1>카트</h1>
+          <div class="cartBooks">
+            <h2>구매가능</h2>
+            <div class="cartBooks__controller">
+              <label
+                ><input
+                  type="checkbox"
+                  class="cartBooks__allClick"
+                />전체선택</label
+              >
+              <button class="cartBooks__selectDel">선택 삭제</button>
+            </div>
+            <ul class="cartBooks__list"></ul>
+          </div>
+        </div>
+        <div class="buyInfoWrapper">
+          <div class="buyInfoWrapper__content">
+            <div>0권을 선택하셨습니다.</div>
+            <div>
+              <span class="highlight">총 상품 금액</span>
+              <span class="amount">0원</span>
+            </div>
+            <div>
+              <span class="highlight">할인 금액</span>
+              <span>0원</span>
+            </div>
+            <div class="buyInfoWrapper__content__sum">
+              <span class="highlight">합계</span>
+              <span class="amount">0원</span>
+            </div>
+          </div>
+          <button>선택 구매하기</button>
+        </div>
       </main>
       <footer class="footer">
         <div class="footer__menu">
@@ -84,10 +117,6 @@
           <div class="footer__info-mark">© RIDI Corp.</div>
         </div>
       </footer>
-    </div>
-    <div class="alarm">
-      <h3 class="content"></h3>
-      <a href="">카트보기📚</a>
     </div>
   </body>
 </html>
