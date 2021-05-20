@@ -5,7 +5,7 @@ export class CartPageComponent {
     ? JSON.parse(localStorage.getItem("store")!)
     : [];
   private prices = this.data.map((item) =>
-    item.saleInfo.listPrice ? item.saleInfo.listPrice.amount : "0"
+    item.saleInfo.listPrice ? Number(item.saleInfo.listPrice.amount) : 0
   );
   private bookList: HTMLUListElement =
     document.querySelector(".cartBooks__list")!;
@@ -43,15 +43,21 @@ export class CartPageComponent {
       (item) => item.checked
     );
     const cartListes = this.bookList.querySelectorAll("li");
-
+    const localCart: itemInfo[] = JSON.parse(localStorage.getItem("store")!);
+    const newlocalCart: itemInfo[] = [];
+    const newPrices: number[] = [];
     if (checkList.findIndex((item) => item) !== -1) {
       cartListes.forEach((item: HTMLElement, index) => {
         if (checkList[index]) {
           this.bookList.removeChild(item);
-          this.prices.splice(index);
-          this.localDel(index);
+        } else {
+          newPrices.push(this.prices[index]);
+          newlocalCart.push(localCart[index]);
         }
       });
+      this.prices = newPrices;
+      localStorage.setItem("store", JSON.stringify(newlocalCart));
+      this.clearMoneyAmount();
     } else {
       window.alert("삭제할 책을 선택해주세요");
     }
@@ -69,6 +75,7 @@ export class CartPageComponent {
         this.bookList.removeChild(target.parentElement!.parentElement!);
         this.prices.splice(Number(target.id), 1);
         this.localDel(Number(target.id));
+        this.clearMoneyAmount();
       }
     }
   };

@@ -4,8 +4,8 @@ main {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  max-width: 100%;
-  min-width: 800px;
+  width: 100%;
+  min-width: 1000px;
 }
 
 .cartInfoWrapper {
@@ -101,6 +101,7 @@ main {
   top: 41%;
   right: 100px;
 }
+
 .buyInfoWrapper__content {
   position: relative;
   font-size: 14px;
@@ -159,4 +160,12 @@ main {
 
 .buyInfoWrapper button:hover {
   opacity: 1;
+}
+
+@media (max-width: 1000px) {
+  .buyInfoWrapper {
+    right: -300px;
+    bottom: 0;
+    background-color: black;
+  }
 }

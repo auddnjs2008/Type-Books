@@ -9,7 +9,7 @@ body {
 }
 
 body::-webkit-scrollbar {
-  /* display: none; */
+  display: none;
 }
 ul {
   margin: 0;
